@@ -1,0 +1,6 @@
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\bin\Debug\DevIO.Infra.dll
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\bin\Debug\DevIO.Infra.pdb
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\obj\Debug\DevIO.Infra.csproj.AssemblyReference.cache
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\obj\Debug\DevIO.Infra.csproj.CoreCompileInputs.cache
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\obj\Debug\DevIO.Infra.dll
+D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Infra\obj\Debug\DevIO.Infra.pdb
