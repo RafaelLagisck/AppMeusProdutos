@@ -11,7 +11,7 @@ namespace DevIO.Business.Models.Produtos
     {
         Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId);
 
-        Task<IEnumerable<Produto>> ObterProdutosPorFornecedores();
+        Task<IEnumerable<Produto>> ObterProdutosPorFornecedores(Guid fornecedorId);
 
         Task<Produto> ObterProdutoFornecedor(Guid Id); 
     }
