@@ -1,0 +1,14 @@
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.csproj.AssemblyReference.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.csproj.CoreCompileInputs.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\DevIO.Infra.dll.config
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\DevIO.Infra.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\DevIO.Infra.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\DevIO.Business.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\EntityFramework.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\EntityFramework.SqlServer.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\DevIO.Business.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\EntityFramework.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\EntityFramework.SqlServer.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.csproj.CopyComplete
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.pdb

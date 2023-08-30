@@ -1,0 +1,6 @@
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Release\DevIO.Business.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Release\DevIO.Business.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Release\DevIO.Business.csproj.AssemblyReference.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Release\DevIO.Business.csproj.CoreCompileInputs.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Release\DevIO.Business.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Release\DevIO.Business.pdb

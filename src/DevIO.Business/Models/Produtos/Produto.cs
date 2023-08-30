@@ -22,7 +22,7 @@ namespace DevIO.Business.Models.Produtos
 
         public bool Ativo { get; set; }
 
-        public Guid ForcedorId { get; set; }
+        public Guid FornecedorId { get; set; }
 
         /*EF Relations*/
 
