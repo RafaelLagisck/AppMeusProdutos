@@ -12,3 +12,5 @@ D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\EntityFramework
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.csproj.CopyComplete
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.dll
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\obj\Release\DevIO.Infra.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\FluentValidation.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Infra\bin\Release\FluentValidation.xml

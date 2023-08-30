@@ -111,3 +111,5 @@ D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\Microsoft.CodeDom.Prov
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\obj\Release\DevIO.AppMvc.csproj.CopyComplete
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\obj\Release\DevIO.AppMvc.dll
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\obj\Release\DevIO.AppMvc.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\FluentValidation.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\FluentValidation.xml
