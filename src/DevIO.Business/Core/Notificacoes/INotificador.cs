@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Core.Notificacoes
 {
-    interface INotificador
+    public interface INotificador
     {
+        bool TemNotificacao();
+
+        List<Notificacao> ObterNotificacoes();
+
+        void Handle(Notificacao notificacao);
     }
 }

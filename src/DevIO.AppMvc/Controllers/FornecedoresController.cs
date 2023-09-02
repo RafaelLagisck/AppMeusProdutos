@@ -1,4 +1,5 @@
-﻿using DevIO.Business.Models.Fornecedores;
+﻿using DevIO.Business.Core.Notificacoes;
+using DevIO.Business.Models.Fornecedores;
 using DevIO.Business.Models.Fornecedores.Services;
 using DevIO.Infra.Data.Repository;
 using System;
@@ -16,7 +17,7 @@ namespace DevIO.AppMvc.Controllers
 
         public FornecedoresController()
         {
-            _fornecedorService = new FornecedorService(new FornecedorRepository(), new EnderecoRepository());
+           // _fornecedorService = new FornecedorService(new FornecedorRepository(), new EnderecoRepository(), INotificador notificador) : base (notificador);
         }
         // GET: Fornecedor
         public async Task<ActionResult> Index()
