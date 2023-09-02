@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Models.Fornecedores.Services
 {
-    public class FornecedorService : BaseService, IFornecedorService
+    public class FornecedorService : BaseService, IProdutoService
     {
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEnderecoRepository _enderecoRepository;
@@ -21,28 +21,45 @@ namespace DevIO.Business.Models.Fornecedores.Services
         public async Task Adicionar(Fornecedor fornecedor)
         {
             if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
-                || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return;
+                || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) 
+                return;
 
-            if (await FornecedorExistente(fornecedor)) return;
+            if (await FornecedorExistente(fornecedor)) 
+                return;
 
             await _fornecedorRepository.Adicionar(fornecedor);
 
-            throw new NotImplementedException();
         }
 
-        public Task Atualizar(Fornecedor fornecedor)
+        public async Task Atualizar(Fornecedor fornecedor)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor))
+                return;
+
+            if (await FornecedorExistente(fornecedor))
+                return;
+
+            await _fornecedorRepository.Atualizar(fornecedor);
         }
 
-        public Task Remover(Guid id)
+        public async Task Remover(Guid id)
         {
-            throw new NotImplementedException();
+            var fornecedor = await _fornecedorRepository.ObterFornecedorProdutosEndereco(id);
+
+            if (fornecedor.Produtos.Any())
+                return;
+            
+            if(fornecedor.Endereco !=null)
+            {
+                await _enderecoRepository.Remover(fornecedor.Endereco.Id);
+            }
         }
 
-        public Task AtualizarEndereco(Endereco endereco)
+        public async Task AtualizarEndereco(Endereco endereco)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new EnderecoValidation(), endereco))
+                return;
+            await _enderecoRepository.Atualizar(endereco);
         }
 
         private async Task<bool> FornecedorExistente(Fornecedor fornecedor)
@@ -53,7 +70,8 @@ namespace DevIO.Business.Models.Fornecedores.Services
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _fornecedorRepository?.Dispose();
+            _enderecoRepository?.Dispose();
         }
     }
 }

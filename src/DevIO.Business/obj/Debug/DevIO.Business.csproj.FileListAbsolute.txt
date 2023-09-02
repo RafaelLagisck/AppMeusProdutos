@@ -4,3 +4,12 @@ D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Busin
 D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.csproj.CoreCompileInputs.cache
 D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.dll
 D:\Rafael\Projetos\NetCore\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Debug\DevIO.Business.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Debug\DevIO.Business.pdb
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Debug\FluentValidation.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\bin\Debug\FluentValidation.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.csproj.AssemblyReference.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.csproj.CoreCompileInputs.cache
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.csproj.CopyComplete
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.Business\obj\Debug\DevIO.Business.pdb
