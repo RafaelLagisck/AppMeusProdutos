@@ -29,5 +29,7 @@ namespace DevIO.AppMvc.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DevIO.AppMvc.ViewModels.ProdutoViewModel> ProdutoViewModels { get; set; }
     }
 }
