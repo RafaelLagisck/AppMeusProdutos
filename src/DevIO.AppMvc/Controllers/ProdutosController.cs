@@ -9,27 +9,37 @@ using System.Web;
 using System.Web.Mvc;
 using DevIO.AppMvc.Models;
 using DevIO.AppMvc.ViewModels;
+using DevIO.Business.Models.Produtos;
+using DevIO.Business.Models.Produtos.Services;
+using DevIO.Business.Core.Notificacoes;
+using DevIO.Infra.Data.Repository;
+using AutoMapper;
 
 namespace DevIO.AppMvc.Controllers
 {
     public class ProdutosController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoService _produtoService;
+        private readonly IMapper _mapper;
 
+
+        public ProdutosController()
+        {
+            _produtoRepository = new ProdutoRepository();
+            _produtoService = new ProdutoService(_produtoRepository, new Notificador());
+        }
         // GET: Produtos
         public async Task<ActionResult> Index()
         {
-            return View(await db.ProdutoViewModels.ToListAsync());
+            return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterTodos()));
         }
 
         // GET: Produtos/Details/5
         public async Task<ActionResult> Details(Guid? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ProdutoViewModel produtoViewModel = await db.ProdutoViewModels.FindAsync(id);
+            var produtoViewModel = await ObterProduto(id);
+            
             if (produtoViewModel == null)
             {
                 return HttpNotFound();
@@ -48,13 +58,12 @@ namespace DevIO.AppMvc.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nome,Descricao,Imagem,Valor,DataCadastro,Ativo,FornecedorId")] ProdutoViewModel produtoViewModel)
+        public async Task<ActionResult> Create(ProdutoViewModel produtoViewModel)
         {
             if (ModelState.IsValid)
             {
-                produtoViewModel.Id = Guid.NewGuid();
-                db.ProdutoViewModels.Add(produtoViewModel);
-                await db.SaveChangesAsync();
+                await _produtoService.Adicionar(_mapper.Map<Produto>(produtoViewModel));
+               
                 return RedirectToAction("Index");
             }
 
@@ -68,7 +77,7 @@ namespace DevIO.AppMvc.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProdutoViewModel produtoViewModel = await db.ProdutoViewModels.FindAsync(id);
+            ProdutoViewModel produtoViewModel = await ProdutoViewModels.FindAsync(id);
             if (produtoViewModel == null)
             {
                 return HttpNotFound();
@@ -118,6 +127,11 @@ namespace DevIO.AppMvc.Controllers
             return RedirectToAction("Index");
         }
 
+        private async Task<ProdutoViewModel> ObterProduto(Guid id)
+        {
+            var produto = _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterProdutoFornecedor(id));
+            return produto;
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

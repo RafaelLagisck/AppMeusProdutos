@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -30,6 +29,6 @@ namespace DevIO.AppMvc.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<DevIO.AppMvc.ViewModels.ProdutoViewModel> ProdutoViewModels { get; set; }
+        
     }
 }
