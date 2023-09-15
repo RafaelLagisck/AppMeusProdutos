@@ -225,3 +225,5 @@ D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\obj\Debug\DevIO.AppMvc.pdb
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\FluentValidation.dll
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\DevIO.Infra.dll.config
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\FluentValidation.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\AutoMapper.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\AutoMapper.xml
