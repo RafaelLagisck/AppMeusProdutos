@@ -227,3 +227,15 @@ D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\DevIO.Infra.dll.config
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\FluentValidation.xml
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\AutoMapper.dll
 D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\AutoMapper.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.Integration.Web.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.Integration.Web.Mvc.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\System.Threading.Tasks.Extensions.dll
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.Integration.Web.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\SimpleInjector.Integration.Web.Mvc.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Rafael\Projetos\MVC5\MeusProdutos\src\DevIO.AppMvc\bin\System.Threading.Tasks.Extensions.xml

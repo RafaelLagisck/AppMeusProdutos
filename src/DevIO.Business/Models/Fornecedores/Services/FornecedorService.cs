@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevIO.Business.Models.Fornecedores.Services
 {
-    public class FornecedorService : BaseService, IProdutoService
+    public class FornecedorService : BaseService, IFornecedorService
     {
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IEnderecoRepository _enderecoRepository;

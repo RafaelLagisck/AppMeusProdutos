@@ -13,7 +13,7 @@ namespace DevIO.AppMvc.Controllers
 {
     public class FornecedoresController : Controller
     {
-        private readonly IProdutoService _fornecedorService;
+        private readonly IFornecedorService _fornecedorService;
 
         public FornecedoresController()
         {
