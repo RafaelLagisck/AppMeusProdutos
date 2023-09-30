@@ -48,6 +48,25 @@ namespace DevIO.AppMvc.Controllers
             return View(fornecedorViewModel);
         }
 
+        [Route("novo-fornecedor")]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [Route("novo-fornecedor")]
+        [HttpPost]
+        public async Task <ActionResult> Create (FornecedorViewModel fornecedorViewModel)
+        {
+            if (!ModelState.IsValid) return View(fornecedorViewModel);
+
+            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+
+            await _fornecedorService.Adicionar(fornecedor);
+
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         [Route("editar-fornecedor/{id:guid}")]
         public async Task<ActionResult> Edit (Guid id)
