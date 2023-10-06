@@ -24,13 +24,13 @@ namespace DevIO.Business.Models.Fornecedores.Services
         }
         public async Task Adicionar(Fornecedor fornecedor)
         {
-            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor))
-                 return;
+            /*if (!ExecutarValidacao(new FornecedorValidation(), fornecedor))
+                 return;*/
 
             //Verificar após tratar Endereco
-            /*if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
+            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
                 || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) 
-                return;*/
+                return;
 
             if (await FornecedorExistente(fornecedor)) 
                 return;
