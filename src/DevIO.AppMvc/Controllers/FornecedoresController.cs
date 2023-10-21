@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
 using DevIO.AppMvc.ViewModels;
-using DevIO.Business.Core.Notificacoes;
 using DevIO.Business.Models.Fornecedores;
 using DevIO.Business.Models.Fornecedores.Services;
-using DevIO.Infra.Data.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DevIO.AppMvc.Controllers
@@ -24,12 +20,11 @@ namespace DevIO.AppMvc.Controllers
                                       IFornecedorService fornecedorService)
         {
             _fornecedorRepository = fornecedorRepository;
-            _fornecedorService = fornecedorService;
             _mapper = mapper;
+            _fornecedorService = fornecedorService;
         }
 
         [Route("lista-de-fornecedores")]
-        [HttpGet]
         public async Task<ActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos()));
@@ -40,7 +35,7 @@ namespace DevIO.AppMvc.Controllers
         {
             var fornecedorViewModel = await ObterFornecedorEndereco(id);
 
-            if(fornecedorViewModel == null)
+            if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
             }
@@ -56,24 +51,26 @@ namespace DevIO.AppMvc.Controllers
 
         [Route("novo-fornecedor")]
         [HttpPost]
-        public async Task <ActionResult> Create (FornecedorViewModel fornecedorViewModel)
+        public async Task<ActionResult> Create(FornecedorViewModel fornecedorViewModel)
         {
             if (!ModelState.IsValid) return View(fornecedorViewModel);
 
             var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
-
             await _fornecedorService.Adicionar(fornecedor);
+
+            // TODO:
+            // E se nao der certo?
 
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
+
         [Route("editar-fornecedor/{id:guid}")]
-        public async Task<ActionResult> Edit (Guid id)
+        public async Task<ActionResult> Edit(Guid id)
         {
             var fornecedorViewModel = await ObterFornecedorProdutosEndereco(id);
 
-            if(fornecedorViewModel == null)
+            if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
             }
@@ -81,32 +78,29 @@ namespace DevIO.AppMvc.Controllers
             return View(fornecedorViewModel);
         }
 
-
         [Route("editar-fornecedor/{id:guid}")]
         [HttpPost]
         public async Task<ActionResult> Edit(Guid id, FornecedorViewModel fornecedorViewModel)
         {
-            if (id != fornecedorViewModel.Id)
-                return HttpNotFound();
+            if (id != fornecedorViewModel.Id) return HttpNotFound();
 
-            if (!ModelState.IsValid)
-                return View(fornecedorViewModel);
+            if (!ModelState.IsValid) return View(fornecedorViewModel);
 
             var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
             await _fornecedorService.Atualizar(fornecedor);
 
-            //TODO:
-            //Se não der certo?
+            // TODO:
+            // E se nao der certo?
 
             return RedirectToAction("Index");
         }
 
         [Route("excluir-fornecedor/{id:guid}")]
-        public async Task<ActionResult> Delete (Guid id)
+        public async Task<ActionResult> Delete(Guid id)
         {
             var fornecedorViewModel = await ObterFornecedorEndereco(id);
 
-            if(fornecedorViewModel == null)
+            if (fornecedorViewModel == null)
             {
                 return HttpNotFound();
             }
@@ -124,12 +118,56 @@ namespace DevIO.AppMvc.Controllers
 
             await _fornecedorService.Remover(id);
 
-            //TODO:
-            //Se não der certo?
+            // TODO:
+            // e se nao der certo?
 
             return RedirectToAction("Index");
         }
 
+        [Route("obter-endereco-fornecedor/{id:guid}")]
+        public async Task<ActionResult> ObterEndereco(Guid id)
+        {
+            var fornecedor = await ObterFornecedorEndereco(id);
+
+            if (fornecedor == null)
+            {
+                return HttpNotFound();
+            }
+
+            return PartialView("_DetalhesEndereco", fornecedor);
+        }
+
+        [Route("atualizar-endereco-fornecedor/{id:guid}")]
+        [HttpGet]
+        public async Task<ActionResult> AtualizarEndereco(Guid id)
+        {
+            var fornecedor = await ObterFornecedorEndereco(id);
+
+            if (fornecedor == null)
+            {
+                return HttpNotFound();
+            }
+
+            return PartialView("_AtualizarEndereco", new FornecedorViewModel { Endereco = fornecedor.Endereco });
+        }
+
+        [Route("atualizar-endereco-fornecedor/{id:guid}")]
+        [HttpPost]
+        public async Task<ActionResult> AtualizarEndereco(FornecedorViewModel fornecedorViewModel)
+        {
+            ModelState.Remove("Nome");
+            ModelState.Remove("Documento");
+
+            if (!ModelState.IsValid) return PartialView("_AtualizarEndereco", fornecedorViewModel);
+
+            await _fornecedorService.AtualizarEndereco(_mapper.Map<Endereco>(fornecedorViewModel.Endereco));
+
+            //TODO:
+            // E se não der certo?
+
+            var url = Url.Action("ObterEndereco", "Fornecedores", new { id = fornecedorViewModel.Endereco.FornecedorId });
+            return Json(new { success = true, url });
+        }
 
         private async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id)
         {
@@ -140,8 +178,5 @@ namespace DevIO.AppMvc.Controllers
         {
             return _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
         }
-
-
-
     }
 }
